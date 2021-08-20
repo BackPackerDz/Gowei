@@ -1,0 +1,87 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply from: '../dependencies.gradle'
+
+android {
+    compileSdkVersion 30
+    buildToolsVersion "30.0.2"
+
+    defaultConfig {
+        minSdkVersion 21
+        targetSdkVersion 30
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
+    }
+
+    buildTypes {
+        debug {
+            debuggable true
+        }
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+
+    android {
+        lintOptions {
+            abortOnError false
+        }
+    }
+
+    sourceSets {
+        huawei {
+            java {
+                srcDirs 'src/huawei/java'
+            }
+        }
+        google {
+            java {
+                srcDirs 'src/google/java'
+            }
+        }
+    }
+
+    flavorDimensions "devices"
+    productFlavors {
+        huawei {
+            dimension "devices"
+        }
+        google {
+            dimension "devices"
+        }
+    }
+
+}
+
+dependencies {
+    implementation fileTree(dir: "libs", include: ["*.jar"])
+
+    // Huawei SDK
+    huaweiImplementation "com.huawei.hms:location:$versions.huaweiLocationVersion"
+    huaweiImplementation("com.huawei.hms:maps:$versions.huaweiMapVersion")
+    huaweiImplementation("com.huawei.agconnect:agconnect-core:$versions.huaweiHmsCoreAg")
+
+    implementation "pub.devrel:easypermissions:$versions.easyPermissionVersion"
+
+    // Google SDK
+    googleImplementation "com.google.android.gms:play-services-maps:$versions.playServicesMaps"
+    googleImplementation "com.google.android.gms:play-services-location:$versions.googleLocationVersion"
+
+    implementation "androidx.core:core-ktx:$versions.coreKtxVersion"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$versions.kotlin"
+    implementation "androidx.appcompat:appcompat:$versions.appCompactVersion"
+    implementation "androidx.constraintlayout:constraintlayout:$versions.constraintVersion"
+    testImplementation "junit:junit:$versions.jUnitLocalVersion"
+    androidTestImplementation "androidx.test.ext:junit:$versions.jUnitExtVersion"
+    androidTestImplementation "androidx.test.espresso:espresso-core:$versions.espressoVersion"
+}
+
+apply from: '../gradle-mvn-push.gradle'
+
+

@@ -1,0 +1,3 @@
+include ':gowei'
+include ':app'
+rootProject.name = "Gowei"

@@ -1,0 +1,83 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply from: '../dependencies.gradle'
+apply plugin: 'com.huawei.agconnect'
+
+
+android {
+    compileSdkVersion 30
+    buildToolsVersion "30.0.2"
+
+
+    signingConfigs {
+        release {
+            storeFile file('keyTest')
+            keyAlias 'djihti'
+            keyPassword 'hackerimperatorimperatorhacker'
+            storePassword 'hackerimperatorimperatorhacker'
+            v1SigningEnabled true
+            v2SigningEnabled true
+        }
+    }
+
+
+    defaultConfig {
+        applicationId "com.appfiza.gowei_sample"
+        minSdkVersion 21
+        targetSdkVersion 30
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    buildTypes {
+        debug {
+            manifestPlaceholders = [mapApiKeyVal: "AIzaSyAlLwCxwZudycp0nodKbpfs_4yGKViCflM"]
+            debuggable true
+            signingConfig signingConfigs.release
+        }
+        release {
+            manifestPlaceholders = [mapApiKeyVal: "AIzaSyAlLwCxwZudycp0nodKbpfs_4yGKViCflM"]
+            debuggable true
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
+        }
+    }
+
+    android {
+        lintOptions {
+            abortOnError false
+        }
+    }
+
+    flavorDimensions "devices"
+    productFlavors {
+        huawei {
+            dimension "devices"
+        }
+        google {
+            dimension "devices"
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: "libs", include: ["*.jar"])
+    implementation "androidx.core:core-ktx:$versions.coreKtxVersion"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$versions.kotlin"
+    implementation "androidx.appcompat:appcompat:$versions.appCompactVersion"
+    implementation "androidx.constraintlayout:constraintlayout:$versions.constraintVersion"
+    testImplementation "junit:junit:$versions.jUnitLocalVersion"
+    androidTestImplementation "androidx.test.ext:junit:$versions.jUnitExtVersion"
+    androidTestImplementation "androidx.test.espresso:espresso-core:$versions.espressoVersion"
+
+    implementation project(path: ':gowei')
+}

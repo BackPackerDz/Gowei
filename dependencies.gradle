@@ -1,0 +1,53 @@
+ext.versions = [
+        minSdk                 : 21,
+        compileSdk             : 29,
+        versionCode            : 1,
+        buildToolsVersion      : '29.0.3',
+        versionName            : '1.0',
+
+        // Testing local
+        jUnitLocalVersion      : '4.12',
+        // Testing instrumental ( Android )
+        jUnitExtVersion        : '1.1.1',
+        espressoVersion        : '3.2.0',
+
+        // Google Maps
+        playServicesMaps       : '17.0.0',
+
+        googleLocationVersion  : '18.0.0',
+
+        huaweiHmsCoreAg        : '1.3.1.300',
+
+        easyPermissionVersion  : '3.0.0',
+
+        huaweiLocationVersion  : '5.0.4.300',
+        huaweiMapVersion       : '5.1.0.300',
+
+        // gradle plugins
+        gradleBuildTool        : '4.0.0',
+        spotlessGradle         : '3.27.2',
+        versionPlugin          : '0.23.0',
+
+        // kotlin
+        kotlin                 : '1.3.70',
+
+        // support library
+        materialVersion        : '1.1.0',
+        appCompactVersion      : '1.1.0',
+        constraintVersion      : '1.1.3',
+        recyclerviewVersion    : '1.1.0',
+        legacyVersion          : '1.0.0',
+
+        androidMapsUtils       : '1.3.3',
+
+
+        // LocationManager
+        locationManagerVersion : '2.3.0',
+
+        // gson
+        gsonVersion            : '2.8.6',
+
+        // architecture components
+        lifecycleVersion       : '2.2.0',
+        coreKtxVersion         : '1.2.0',
+]

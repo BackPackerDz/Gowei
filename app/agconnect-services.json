@@ -1,0 +1,29 @@
+{
+	"agcgw_all":{
+		"CN":"connect-drcn.hispace.hicloud.com",
+		"CN_back":"connect-drcn.dbankcloud.cn",
+		"DE":"connect-dre.hispace.hicloud.com",
+		"DE_back":"connect-dre.dbankcloud.cn",
+		"RU":"connect-drru.hispace.hicloud.com",
+		"RU_back":"connect-drru.dbankcloud.cn",
+		"SG":"connect-dra.hispace.hicloud.com",
+		"SG_back":"connect-dra.dbankcloud.cn"
+	},
+	"client":{
+		"cp_id":"890213200000000021",
+		"product_id":"9105163812218466019",
+		"client_id":"283446780777989312",
+		"client_secret":"EA3728023F217BFB9F8CFBEFCF20F77112FA219558D8E419B023366B40E972FC",
+		"project_id":"9105163812218466019",
+		"app_id":"100190987",
+		"api_key":"CV5VYDE6IXvhJBNU2SBEkFKlFuYLvr9GWyoRUDt5urutctKHFreAXvJHj1gJMzIrOB+gU1d8IsuUIa7pY34tDCEWLH3Z",
+		"package_name":"com.appfiza.gowei_sample"
+	},
+	"configuration_version":"2.0",
+	"appInfos":[
+		{
+			"package_name":"com.appfiza.gowei_sample",
+			"app_id":"100190987"
+		}
+	]
+}
