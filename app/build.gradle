@@ -12,10 +12,10 @@ android {
 
     signingConfigs {
         release {
-            storeFile file('keyTest')
-            keyAlias 'djihti'
-            keyPassword 'hackerimperatorimperatorhacker'
-            storePassword 'hackerimperatorimperatorhacker'
+            storeFile file('key')
+            keyAlias ''
+            keyPassword ''
+            storePassword ''
             v1SigningEnabled true
             v2SigningEnabled true
         }
