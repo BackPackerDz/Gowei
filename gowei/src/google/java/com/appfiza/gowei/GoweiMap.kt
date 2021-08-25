@@ -13,6 +13,7 @@ import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.*
 import com.appfiza.gowei.common.Map
 import com.appfiza.gowei.common.decodePolyline
+import com.appfiza.gowei.exensions.bitmapDescriptorFromVector
 
 /**
  * Created by Fayçal KADDOURI 🐈 on 3/7/21.
@@ -75,7 +76,7 @@ class GoweiMap(
     }
 
     fun icon(drawable: Drawable?): GoweiMap {
-        val icon = bitmapDescriptorFromVector(drawable)
+        val icon = drawable?.bitmapDescriptorFromVector()
         markers[currentMarkerID]?.setIcon(icon)
         return this
     }
