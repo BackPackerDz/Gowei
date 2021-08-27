@@ -75,7 +75,7 @@ class GoweiMap(
     }
 
     fun icon(drawable: Drawable?): GoweiMap {
-        val icon = bitmapDescriptorFromVector(drawable)
+        val icon = drawable.bitmapDescriptorFromVector()
         markers[currentMarkerID]?.setIcon(icon)
         return this
     }

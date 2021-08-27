@@ -62,11 +62,13 @@ class GoweiLocation : YLocation() {
     }
 
     private fun buildLocationRequest() {
-        locationRequest = LocationRequest()
-        locationRequest.priority = priority
-        locationRequest.interval = interval
-        locationRequest.fastestInterval = fastestInterval
-        locationRequest.smallestDisplacement = smallestDisplacement
+        locationRequest = LocationRequest.create().apply {
+            priority
+            interval
+            fastestInterval
+            smallestDisplacement
+        }
+
     }
 
     //Build the location callback object and obtain the location results //as demonstrated below:
